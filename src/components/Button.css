@@ -13,9 +13,13 @@
 .btn:hover {
     padding: 8px 20px;
     transition: all 0.3s ease-out;
-    background: var(--primary);
-    color: white;
+    background: #fff;
+    color: #6568f4;
     transition: 250ms;
+}
+
+.btn--primary {
+    background-color: var(--primary);
 }
 
 .btn--outline {
