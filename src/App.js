@@ -8,7 +8,6 @@ import Faq from './Faq';
 import Login from './Login';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
-import Loading from './components/Loading';
 
 function App() {
   return (
