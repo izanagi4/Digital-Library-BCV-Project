@@ -62,6 +62,5 @@ footer li a {
 }
 
 footer li a:hover {
-    opacity: 0.5;
     color:white;
 }
