@@ -23,10 +23,10 @@ body {
 }
 
 .main h1 {
-    font-weight: 700;
     width: 13em;
-    color: rgb(8, 39, 30);
-    font-size: 45px;
+    color: black;
+    font-weight: 700;
+    font-size: 3.75em;
 }
 
 .main p {

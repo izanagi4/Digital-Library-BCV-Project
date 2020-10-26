@@ -2,6 +2,9 @@ import React from "react";
 import "./styles/About.css";
 import Navbar from './components/Navbar/Navbar';
 import Footer from './Footer';
+import contact from './images/contact-us.jpg';
+import download from './images/download.jpg';
+import locate from './images/locate.jpg';
 
 function About() {
   return (
@@ -69,7 +72,7 @@ function About() {
       </div>
       <div className="card-container">
         <div className="card-about">
-          <h1>(img here)</h1>
+        <img src={contact} alt="" /><br/>
           <h1>Contacts</h1>
           <small
             >Pengunjung dapat menghubungi admin e-library apabila tidak
@@ -77,7 +80,7 @@ function About() {
             </small>
         </div>
         <div className="card-about">
-          <h1>(img here)</h1>
+        <img src={download} alt="" /><br/>
           <h1>Download</h1>
           <small
             >Pengunjung dapat mendownload SOP Juklak & Juknis peminjaman dan
@@ -85,7 +88,7 @@ function About() {
             </small>
         </div>
         <div className="card-about">
-          <h1>(img here)</h1>
+        <img src={locate} alt="" /><br/>
           <h1>Locater</h1>
           <small
             >Pengunjung dapat mengetahui Lokasi perpustakaan BNI, serta petunjuk

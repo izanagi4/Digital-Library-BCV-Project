@@ -10,7 +10,7 @@ function StartPage() {
         <>
             <Navbar />
             <div className="main">
-                <h1>E-Library <br /> BNI Corporate University</h1>
+                <h1>E-Library BNI <br/> Corporate University</h1>
                 <p>Platform E-Library khusus para pegawai BNI46 dan para mahasiswa untuk melakukan riset pada BANK BNI...</p>
                 <NavLink to="/Home"><button><strong>START NOW</strong></button></NavLink>
             </div>
