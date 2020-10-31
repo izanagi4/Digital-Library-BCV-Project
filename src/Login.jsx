@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/login.css';
 import { NavLink } from 'react-router-dom';
 import img_login from './images/login.svg';
+import './components/LoginSystem.js';
 
 function Login() {
     return (
