@@ -20,9 +20,6 @@ function About() {
         </p>
       </div>
       <div className="video">
-        <a href="https://www.youtube.com/watch?v=wZ1sOoFClFs">
-          <button>Watch the video on youtube!</button>
-        </a>
         <iframe width="1080" height="720" src="https://www.youtube.com/embed/wZ1sOoFClFs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div className="facility-container">
@@ -31,19 +28,19 @@ function About() {
         <div className="traits">
           <ul>
             <li>
-              <a className="circle" href="#"><i className="fas fa-tv"></i></a>
+             <i className="circle fas fa-tv"></i>
               PC
             </li>
             <li>
-              <a className="circle" href="#"><i className="fas fa-wifi"></i></a>Internet
+             <i className="circle fas fa-wifi"></i>Internet
               & Intranet
             </li>
             <li>
-              <a className="circle" href="#"><i className="fas fa-print"></i></a>Print &
+             <i className="circle fas fa-print"></i>Print &
               Fotocopy
             </li>
             <li>
-              <a className="circle" href="#"><i className="far fa-handshake"></i></a>
+             <i className="circle far fa-handshake"></i>
               Fasilitas Meeting
             </li>
           </ul>
