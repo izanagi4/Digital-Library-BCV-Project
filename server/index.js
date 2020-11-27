@@ -44,7 +44,7 @@ app.post("/register", (req, res) => {
 
 app.post("/upload", (req, res) => {
   const namaLengkap = req.body.namaLengkap;
-  const univ = req.body.namaLengkap;
+  const univ = req.body.univ;
   const namaPeneliti = req.body.namaPeneliti;
 
   db.query(
@@ -66,16 +66,6 @@ app.post("/uploadfile", function (req, res) {
       return res.status(500).json(err);
     }
     return res.status(200).send(req.file);
-  });
-});
-
-app.get("/employees", (req, res) => {
-  db.query("SELECT * FROM employees", (err, result) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(result);
-    }
   });
 });
 
