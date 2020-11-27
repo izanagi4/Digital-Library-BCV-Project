@@ -26,13 +26,6 @@ function DatabaseRiset() {
                 <h3>Nama Lengkap : {val.namaLengkap}</h3>
                 <h3>universitas : {val.univ}</h3>
                 <h3>Nama Peneliti : {val.namaPeneliti}</h3>
-                <a
-                  href="https://cdn.discordapp.com/attachments/423724286856134677/781028806038650890/FB_IMG_1598362482997.jpg"
-                  target="_blank"
-                  download
-                >
-                  Download
-                </a>
               </div>
             </div>
           );

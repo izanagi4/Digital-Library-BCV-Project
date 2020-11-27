@@ -8,7 +8,7 @@ function RepositoryRiset() {
         <h1>REPOSITORY RISET BNI</h1>
         <div className="repository-buttons">
           <div className="repository-buttons-desc">
-            <a href="http://localhost:3000/databaseriset">
+            <a href="/databaseriset">
               <button>KANTOR PUSAT</button>
             </a>
             <p>
@@ -17,7 +17,7 @@ function RepositoryRiset() {
             </p>
           </div>
           <div className="repository-buttons-desc">
-            <a href="http://localhost:3000/databaseriset">
+            <a href="/databaseriset">
               <button>KANTOR WILAYAH</button>
             </a>
             <p>

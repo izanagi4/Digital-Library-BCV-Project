@@ -16,7 +16,7 @@ function Riset() {
           Mahasiswa jenjang S1 dan S3. Jika ingin melakukan penelitian
           melengkapi ketentuan di bawah.
         </p>
-        <a href="http://localhost:3000/repositoryriset">
+        <a href="/repositoryriset">
           <button>Klik Disini!</button>
         </a>
       </div>
