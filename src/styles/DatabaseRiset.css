@@ -1,0 +1,16 @@
+.database-riset-information {
+  display: flex;
+  align-items: center;
+}
+
+.database-riset-information img {
+  width: 15rem;
+}
+
+.database-riset-description {
+  padding: 10px;
+  width: 30rem;
+  height: 100%;
+  margin: 20px;
+  border: 1px solid black;
+}
