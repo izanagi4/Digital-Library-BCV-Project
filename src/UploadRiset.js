@@ -48,7 +48,6 @@ function UploadRiset() {
             }}
           />
         </div>
-        <UploadFile />
         <button onClick={addRiset}>Submit</button>
       </div>
       <Footer />

@@ -1,16 +1,26 @@
 .database-riset-information {
   display: flex;
   align-items: center;
+  margin: 20px;
 }
 
 .database-riset-information img {
-  width: 15rem;
+  margin-top: 20px;
+  width: 13rem;
 }
 
 .database-riset-description {
   padding: 10px;
-  width: 30rem;
+  width: 40rem;
   height: 100%;
   margin: 20px;
   border: 1px solid black;
+}
+
+.database-riset-description h3 {
+  font-weight: 700;
+}
+
+.database-riset-description h4 {
+  font-weight: 600;
 }

@@ -1,32 +1,15 @@
-var express = require("express");
-var app = express();
-var multer = require("multer");
-var cors = require("cors");
+const path = require("path");
+const express = require("express");
+const app = express();
+const publicPath = path.join(__dirname, "..", "public");
+const port = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(express.static(publicPath));
 
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "../server-side/upload");
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + "-" + file.originalname);
-  },
+app.get("*", (req, res) => {
+  res.sendFile(path.join(publicPath, "../digital-library/public/index.html"));
 });
 
-var upload = multer({ storage: storage }).single("file");
-
-app.post("/upload", function (req, res) {
-  upload(req, res, function (err) {
-    if (err instanceof multer.MulterError) {
-      return res.status(500).json(err);
-    } else if (err) {
-      return res.status(500).json(err);
-    }
-    return res.status(200).send(req.file);
-  });
-});
-
-app.listen(8000, function () {
-  console.log("App running on port 8000");
+app.listen(port, () => {
+  console.log("Server is up!");
 });

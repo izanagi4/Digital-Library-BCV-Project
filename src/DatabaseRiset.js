@@ -23,9 +23,9 @@ function DatabaseRiset() {
             <div className="database-riset-information">
               <img src={img} alt="" />
               <div className="database-riset-description">
-                <h3>Nama Lengkap : {val.namaLengkap}</h3>
-                <h3>universitas : {val.univ}</h3>
-                <h3>Nama Peneliti : {val.namaPeneliti}</h3>
+                <h3>{val.namaPeneliti}</h3>
+                <h4>Nama Peneliti : {val.namaLengkap}</h4>
+                <h4>Universitas : {val.univ}</h4>
               </div>
             </div>
           );
