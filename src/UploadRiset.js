@@ -11,7 +11,7 @@ function UploadRiset() {
   const [namaPeneliti, setNamaPeneliti] = useState();
 
   const addRiset = () => {
-    Axios.post("http://localhost:3001/upload", {
+    Axios.post("https://bcv-server.herokuapp.com/upload", {
       namaLengkap: namaLengkap,
       univ: univ,
       namaPeneliti: namaPeneliti,

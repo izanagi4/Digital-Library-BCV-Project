@@ -9,9 +9,11 @@ function DatabaseRiset() {
   const [risetList, setRisetList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/uploadriset").then((response) => {
-      setRisetList(response.data);
-    });
+    Axios.get("https://bcv-server.herokuapp.com/uploadriset").then(
+      (response) => {
+        setRisetList(response.data);
+      }
+    );
   }, []);
 
   return (
