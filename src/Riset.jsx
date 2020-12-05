@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./Footer";
 import "./styles/Riset.css";
-import repositoryriset from "./RepositoryRiset";
 
 function Riset() {
   return (

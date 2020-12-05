@@ -2,7 +2,6 @@ import Axios from "axios";
 import React, { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./Footer";
-import UploadFile from "./uploadfile";
 import "./styles/UploadRiset.css";
 
 function UploadRiset() {
