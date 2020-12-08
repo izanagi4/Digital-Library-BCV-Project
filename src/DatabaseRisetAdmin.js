@@ -9,7 +9,7 @@ function DatabaseRiset() {
   const [risetList, setRisetList] = useState([]);
 
   useEffect(() => {
-    Axios.get("https://bcv-mysql-server.herokuapp.com/uploadriset").then(
+    Axios.get("https://bcv-server.herokuapp.com/uploadriset").then(
       (response) => {
         setRisetList(response.data);
       }
@@ -19,6 +19,9 @@ function DatabaseRiset() {
   return (
     <div className="database-riset">
       <Navbar />
+      <a href="/uploadriset">
+        <button className="database-riset-add">Add riset</button>
+      </a>
       <div className="database-information">
         {risetList.map((val, key) => {
           return (

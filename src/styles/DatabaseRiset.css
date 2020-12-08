@@ -24,3 +24,11 @@
 .database-riset-description h4 {
   font-weight: 600;
 }
+
+.database-riset-add {
+  display: block;
+  margin-left: auto;
+  position: absolute;
+  margin: 30px 0;
+  left: 80rem;
+}
