@@ -10,12 +10,13 @@ function UploadRiset() {
   const [namaPeneliti, setNamaPeneliti] = useState();
 
   const addRiset = () => {
-    Axios.post("https://bcv-mysql-server.herokuapp.com/upload", {
+    Axios.post("http://bcv-mysql-server.herokuapp.com/upload", {
       namaLengkap: namaLengkap,
       univ: univ,
       namaPeneliti: namaPeneliti,
     }).then(() => {
-      console.log("success");
+      alert("Riset added!");
+      window.location.reload();
     });
   };
 

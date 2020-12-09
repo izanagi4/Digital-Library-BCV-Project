@@ -10,9 +10,20 @@ function Login() {
   const [passwordLogin, setPasswordLogin] = useState("");
 
   const [loginStatus, setLoginStatus] = useState("");
+
+  fetch("http://bcv-mysql-server.herokuapp.com/register", {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      document.body.textContent = result.message;
+    });
+
   Axios.defaults.withCredentials = true;
   const register = () => {
-    Axios.post("https://bcv-mysql-server.herokuapp.com/register", {
+    Axios.post("http://bcv-mysql-server.herokuapp.com/register", {
       username: username,
       password: password,
     }).then(() => {
@@ -21,20 +32,21 @@ function Login() {
   };
 
   const login = () => {
-    Axios.post("https://bcv-mysql-server.herokuapp.com/login", {
+    Axios.post("http://bcv-mysql-server.herokuapp.com/login", {
       username: usernameLogin,
       password: passwordLogin,
     }).then((response) => {
       if (response.data.message) {
-        setLoginStatus(response.data.message);
+        alert("Wrong username or password!");
       } else {
-        setLoginStatus(response.data[0].username);
+        alert("Welcome!");
+        window.location.href = "/";
       }
     });
   };
 
   useEffect(() => {
-    Axios.get("https://bcv-mysql-server.herokuapp.com/login").then(
+    Axios.get("http://bcv-mysql-server.herokuapp.com/login").then(
       (response) => {
         if (response.data.loggedIn === true) {
           setLoginStatus(response.data.user[0].username);

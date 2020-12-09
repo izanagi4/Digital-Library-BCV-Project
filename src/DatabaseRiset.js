@@ -4,20 +4,35 @@ import "./styles/DatabaseRiset.css";
 import Footer from "./Footer";
 import Axios from "axios";
 import img from "./images/book.svg";
+import DatabaseAdmin from "./DatabaseRisetAdmin";
 
 function DatabaseRiset() {
   const [risetList, setRisetList] = useState([]);
+  const [role, setRole] = useState("");
 
   useEffect(() => {
-    Axios.get("https://bcv-mysql-server.herokuapp.com/uploadriset").then(
+    Axios.get("http://bcv-mysql-server.herokuapp.com/uploadriset").then(
       (response) => {
         setRisetList(response.data);
       }
     );
   }, []);
 
+  Axios.defaults.withCredentials = true;
+  useEffect(() => {
+    Axios.get("http://bcv-mysql-server.herokuapp.com/login").then(
+      (response) => {
+        if (response.data.loggedIn === true) {
+          setRole(response.data.user[0].role);
+          console.log(response.data);
+        }
+      }
+    );
+  }, []);
+
   return (
     <div className="database-riset">
+      {role === "admin" && <DatabaseAdmin />}
       <Navbar />
       <div className="database-information">
         {risetList.map((val, key) => {
