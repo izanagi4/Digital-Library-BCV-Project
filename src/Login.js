@@ -10,34 +10,24 @@ function Login() {
   const [passwordLogin, setPasswordLogin] = useState("");
 
   const [loginStatus, setLoginStatus] = useState("");
-
-  fetch("http://bcv-mysql-server.herokuapp.com/register", {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((result) => {
-      document.body.textContent = result.message;
-    });
-
   Axios.defaults.withCredentials = true;
   const register = () => {
-    Axios.post("http://bcv-mysql-server.herokuapp.com/register", {
+    Axios.post("http://localhost:3001/register", {
       username: username,
       password: password,
-    }).then(() => {
-      console.log("success");
+    }).then((response) => {
+      console.log(response);
     });
   };
 
   const login = () => {
-    Axios.post("http://bcv-mysql-server.herokuapp.com/login", {
+    Axios.post("http://localhost:3001/login", {
       username: usernameLogin,
       password: passwordLogin,
     }).then((response) => {
       if (response.data.message) {
         alert("Wrong username or password!");
+        window.location.reload();
       } else {
         alert("Welcome!");
         window.location.href = "/";
@@ -46,13 +36,11 @@ function Login() {
   };
 
   useEffect(() => {
-    Axios.get("http://bcv-mysql-server.herokuapp.com/login").then(
-      (response) => {
-        if (response.data.loggedIn === true) {
-          setLoginStatus(response.data.user[0].username);
-        }
+    Axios.get("http://localhost:3001/login").then((response) => {
+      if (response.data.loggedIn === true) {
+        setLoginStatus(response.data.user[0].username);
       }
-    );
+    });
   }, []);
   return (
     <div className="login-page">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./component/Navbar";
 import "./styles/DatabaseRiset.css";
 import Footer from "./Footer";
 import Axios from "axios";

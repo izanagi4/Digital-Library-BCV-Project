@@ -1,6 +1,6 @@
 import Axios from "axios";
-import React, { useState } from "react";
-import Navbar from "./components/Navbar/Navbar";
+import React, { useState, useEffect } from "react";
+import Navbar from "./component/Navbar";
 import Footer from "./Footer";
 import "./styles/UploadRiset.css";
 
@@ -8,9 +8,10 @@ function UploadRiset() {
   const [namaLengkap, setNamaLengkap] = useState();
   const [univ, setUniv] = useState();
   const [namaPeneliti, setNamaPeneliti] = useState();
+  const [role, setRole] = useState("");
 
   const addRiset = () => {
-    Axios.post("http://bcv-mysql-server.herokuapp.com/upload", {
+    Axios.post("http://localhost:3001/upload", {
       namaLengkap: namaLengkap,
       univ: univ,
       namaPeneliti: namaPeneliti,
@@ -20,8 +21,23 @@ function UploadRiset() {
     });
   };
 
+  Axios.defaults.withCredentials = true;
+  useEffect(() => {
+    Axios.get("http://localhost:3001/login").then((response) => {
+      if (response.data.loggedIn === true) {
+        setRole(response.data.user[0].role);
+        console.log(response.data);
+      }
+    });
+  }, []);
+
   return (
     <div className="uploadriset-page">
+      {role === "user" &&
+        alert(
+          "you don't have the privelege to access this page!",
+          window.history.back()
+        )}
       <Navbar />
       <div className="uploadriset-information">
         <h1>REGISTRASI REPOSITORY BNI</h1>

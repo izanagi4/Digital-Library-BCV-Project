@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/About.css";
 import bniVid from "./video/bni-video.mp4";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./component/Navbar";
 import Footer from "./Footer";
 import contact from "./images/contact-us.jpg";
 import download from "./images/download.jpg";

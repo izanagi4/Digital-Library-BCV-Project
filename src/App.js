@@ -11,6 +11,7 @@ import UploadRiset from "./UploadRiset";
 import UploadFile from "./uploadfile";
 import RepositoryRiset from "./RepositoryRiset";
 import DatabaseRiset from "./DatabaseRiset";
+import Navbar2 from "./component/Navbar";
 import "./App.css";
 import "./App.js";
 import { Switch, Route } from "react-router-dom";
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <Switch>
+        <Route exacth path="/navbar" component={Navbar2} />
         <Route exacth path="/databaseriset" component={DatabaseRiset} />
         <Route exacth path="/repositoryriset" component={RepositoryRiset} />
         <Route exacth path="/uploadfile" component={UploadFile} />

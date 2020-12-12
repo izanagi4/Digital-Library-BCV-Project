@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./component/Navbar";
 import Footer from "./Footer";
 import "./styles/Riset.css";
 
