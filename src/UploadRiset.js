@@ -33,11 +33,12 @@ function UploadRiset() {
 
   return (
     <div className="uploadriset-page">
-      {role === "user" &&
-        alert(
-          "you don't have the privelege to access this page!",
-          window.history.back()
-        )}
+      {role === "user" ||
+        ("null" &&
+          alert(
+            "you don't have the privelege to access this page!",
+            window.history.back()
+          ))}
       <Navbar />
       <div className="uploadriset-information">
         <h1>REGISTRASI REPOSITORY BNI</h1>
