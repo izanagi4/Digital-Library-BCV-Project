@@ -6,6 +6,7 @@
 
 .kategori-buku-flexbox {
   display: flex;
+  flex-direction: column;
 }
 
 .kategori-buku-leftside {
@@ -15,7 +16,17 @@
   margin: 50px;
 }
 
-.kategori-buku h1 {
+.kategori-buku-leftside input {
+  position: relative;
+  top: 5rem;
+  width: 400px;
+  padding: 10px;
+  outline: none;
+  border-radius: 20px;
+}
+
+.kategori-buku-leftside h1 {
+  font-size: 70px;
   font-weight: 800;
 }
 
@@ -30,9 +41,11 @@
   margin: 50px;
   height: 500px;
   display: flex;
+  flex-direction: row;
   overflow: auto;
   flex-wrap: wrap;
   text-align: center;
+  transition: all 300ms ease-in-out;
 }
 
 .kategori-buku-rightside img {

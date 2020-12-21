@@ -12,6 +12,10 @@ import UploadFile from "./uploadfile";
 import RepositoryRiset from "./RepositoryRiset";
 import DatabaseRiset from "./DatabaseRiset";
 import KategoriBuku from "./KategoriBuku";
+import thriveBook from "./books/thrive";
+import manajamenBook from "./books/manajemen";
+import hobiBook from "./books/50hobi";
+import alasanBook from "./books/21alasan";
 import "./App.css";
 import "./App.js";
 import { Switch, Route } from "react-router-dom";
@@ -20,6 +24,22 @@ function App() {
   return (
     <>
       <Switch>
+        <Route
+          exacth
+          path="/books/21-alasan-kenapa-kita-harus-investasi"
+          component={alasanBook}
+        />
+        <Route
+          exacth
+          path="/books/50-hobi-penghasil-cuan"
+          component={hobiBook}
+        />
+        <Route
+          exacth
+          path="/books/manajemen-risiko"
+          component={manajamenBook}
+        />
+        <Route exacth path="/books/thrive" component={thriveBook} />
         <Route exacth path="/kategoribuku" component={KategoriBuku} />
         <Route exacth path="/databaseriset" component={DatabaseRiset} />
         <Route exacth path="/repositoryriset" component={RepositoryRiset} />

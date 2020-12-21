@@ -7,6 +7,7 @@ import "./styles/KategoriBuku.css";
 
 function KategoriBuku() {
   const [kategoriList, setKategoriList] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     Axios.get("http://localhost:3001/kategoribuku").then((response) => {
@@ -20,26 +21,38 @@ function KategoriBuku() {
       <div className="kategori-buku-flexbox">
         <div className="kategori-buku-leftside">
           <h1>Kategori Buku</h1>
-          <h2>Tahun</h2>
-          <h2>Manajemen</h2>
-          <h2>Akuntansi</h2>
-          <h2>Perbankan</h2>
-          <h2>Sosial & Politik</h2>
+          <input
+            type="text"
+            placeholder="Search..."
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+            }}
+          />
         </div>
         <div className="kategori-buku-rightside">
-          {kategoriList.map((val, key) => {
-            return (
-              <div className="kategori-buku-card">
-                <a href={`/${val.link}`}>
-                  <img src={img} alt="booked" />
-                  <h4>{val.judul_buku}</h4>
-                  <h5>
-                    {val.tahun_buku} <br /> {val.penerbit}
-                  </h5>
-                </a>
-              </div>
-            );
-          })}
+          {kategoriList
+            .filter((val) => {
+              if (searchTerm === "") {
+                return val;
+              } else if (
+                val.judul_buku.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .map((val, key) => {
+              return (
+                <div className="kategori-buku-card">
+                  <a href={`/books/${val.link}`}>
+                    <img src={img} alt="booked" />
+                    <h4 key={key}>{val.judul_buku}</h4>
+                    <h5>
+                      {val.tahun_buku} <br /> {val.penulis}
+                    </h5>
+                  </a>
+                </div>
+              );
+            })}
         </div>
       </div>
       <Footer />
