@@ -14,10 +14,10 @@ function Catalogue() {
           <a href="/kategoribuku">
             <h1>KATEGORI BUKU</h1>
           </a>
-          <a href="/">
+          <a href="/kategori-ebook">
             <h1>KATEGORI E-BOOK</h1>
           </a>
-          <a href="/">
+          <a href="/kategori-buku-favorit">
             <h1>FAVORITE BOOK</h1>
           </a>
         </div>

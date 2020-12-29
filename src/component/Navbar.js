@@ -11,6 +11,7 @@ function Navbar() {
     Axios.get("http://localhost:3001/login").then((response) => {
       if (response.data.loggedIn === true) {
         setLoginStatus(`Welcome, ${response.data.user[0].username}`);
+        document.getElementById("NavLogin").href = "/comingsoon";
       } else {
         setLoginStatus("Login");
       }
@@ -33,7 +34,9 @@ function Navbar() {
           <a href="/about">About</a>
           <a href="/riset">Riset</a>
           <a href="/faq">FAQ</a>
-          <a href="/login">{loginStatus}</a>
+          <a href="/login" id="NavLogin">
+            {loginStatus}
+          </a>
         </div>
         <button
           onClick={() => setShowLinks(!showLinks)}

@@ -1,3 +1,4 @@
+import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../Footer";
@@ -5,42 +6,24 @@ import bookImg from "../images/kategori-buku.jpg";
 import "./books/styles/books.css";
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
-
-  const increase = () => {
-    setCount((prevCount) => {
-      if (prevCount === "15") {
-        alert("Max book has been reached!");
-        window.location.reload();
-      } else {
-        const newCount = Number(prevCount) + 1;
-        localStorage.setItem("count", newCount);
-        window.location.reload();
-      }
-    });
-  };
-
-  const decrease = () => {
-    setCount((prevCount) => {
-      window.location.reload();
-      const newCount = Number(prevCount) - 1;
-      localStorage.setItem("count", newCount);
-      return newCount;
-    });
-  };
+  const [bookList, setBookList] = useState([]);
 
   useEffect(() => {
-    const initialValue = localStorage.getItem("count");
-    if (initialValue) setCount(initialValue);
+    Axios.get("http://localhost:3001/thrive").then((response) => {
+      setBookList(response.data);
+    });
   }, []);
 
-  useEffect(() => {
-    document.getElementById("detail").style.display = "none";
-  });
+  const selesaiPinjam = (id) => {
+    Axios.post(`http://localhost:3001/selesaipinjam/${id}`).then((response) => {
+      window.location.reload();
+    });
+  };
 
-  const wish = () => {
-    alert("Buku telah ditambahkan ke wishlist!");
-    window.location.reload();
+  const pinjam = (id) => {
+    Axios.post(`http://localhost:3001/pinjam/${id}`).then((response) => {
+      window.location.reload();
+    });
   };
 
   const displayDescription = () => {
@@ -57,6 +40,10 @@ const Counter = () => {
     document.getElementById("desc-button").style.textDecoration = "none";
   };
 
+  useEffect(() => {
+    document.getElementById("detail").style.display = "none";
+  });
+
   return (
     <div className="kategori-buku-information">
       <Navbar />
@@ -64,19 +51,39 @@ const Counter = () => {
         <div className="kategori-buku-information-top">
           <img src={bookImg} alt="" />
           <div className="kategori-buku-information-flexcol">
-            <div className="kategori-buku-information-top-detail">
-              <h1>Thrive</h1>
-              <h3>Arianna Huffington</h3>
-              <h5>25 Maret 2015</h5>
-              <h4>
-                <b>Jumlah Peminjam : {count}</b>
-              </h4>
-            </div>
-            <div className="kategori-buku-information-top-buttons">
-              <button onClick={increase}>Pinjam Sekarang</button>
-              <button onClick={decrease}>Batal Pinjam</button>
-              <button onClick={wish}>Tambahkan ke wishlist</button>
-            </div>
+            {bookList.map((val, key) => {
+              return (
+                <div
+                  className="kategori-buku-information-top-detail"
+                  key={val.id}
+                >
+                  <h1>{val.judul_buku}</h1>
+                  <h3>{val.penulis}</h3>
+                  <h5>{val.tahun_buku}</h5>
+                  <h4>
+                    <b>Jumlah Peminjam : {val.peminjam} </b>
+                  </h4>
+                  <div className="kategori-buku-information-top-buttons">
+                    <button
+                      onClick={() => {
+                        pinjam(val.id);
+                      }}
+                    >
+                      {" "}
+                      Pinjam Buku
+                    </button>
+                    <button
+                      onClick={() => {
+                        selesaiPinjam(val.id);
+                      }}
+                    >
+                      {" "}
+                      Selesai Pinjam
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className="kategori-buku-information-bottom">
@@ -121,11 +128,15 @@ const Counter = () => {
               <p>ISBN : 9780753555422</p>
               <p>Bahasa : Indonesia</p>
               <p>Penerbit : Kepustakaan Populer Gramedia</p>
-              <p>
-                Status :{" "}
-                {(count == 15 && "Sedang di pinjam") ||
-                  (count < 15 && "Tersedia")}
-              </p>
+              {bookList.map((val, key) => {
+                return (
+                  <p>
+                    Status :
+                    {(val.peminjam === 15 && " Sedang di pinjam") ||
+                      (val.peminjam < 15 && " Tersedia")}
+                  </p>
+                );
+              })}
             </div>
           </div>
         </div>

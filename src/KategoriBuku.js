@@ -31,7 +31,7 @@ function KategoriBuku() {
         </div>
         <div className="kategori-buku-rightside">
           {kategoriList
-            .filter((val) => {
+            .filter((val, key) => {
               if (searchTerm === "") {
                 return val;
               } else if (
@@ -42,10 +42,10 @@ function KategoriBuku() {
             })
             .map((val, key) => {
               return (
-                <div className="kategori-buku-card">
+                <div className="kategori-buku-card" key={val.id}>
                   <a href={`/books/${val.link}`}>
                     <img src={img} alt="booked" />
-                    <h4 key={key}>{val.judul_buku}</h4>
+                    <h4>{val.judul_buku}</h4>
                     <h5>
                       {val.tahun_buku} <br /> {val.penulis}
                     </h5>
