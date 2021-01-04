@@ -18,8 +18,14 @@ import hobiBook from "./books/50hobi";
 import alasanBook from "./books/21alasan";
 import kategoriebook from "./KategoriEbook";
 import bukufavorit from "./KategoriBukuFavorit";
+import Dashboard from "./pages/Dashboard";
+import Chart from "./pages/Chart";
+import Apps from "./pages/Apps";
+import Chat from "./pages/Chat";
+import Message from "./pages/Message";
+import Setting from "./pages/Setting";
+import AddBook from "./pages/AddBook";
 import comingsoon from "./ComingSoon";
-import Profile from "./Profile";
 import "./App.css";
 import "./App.js";
 import { Switch, Route } from "react-router-dom";
@@ -28,7 +34,13 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/addbook" component={AddBook} />
+        <Route exact path="/setting" component={Setting} />
+        <Route exact path="/message" component={Message} />
+        <Route exact path="/chat" component={Chat} />
+        <Route exact path="/apps" component={Apps} />
+        <Route exact path="/chart" component={Chart} />
+        <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/kategori-buku-favorit" component={bukufavorit} />
         <Route exact path="/comingsoon" component={comingsoon} />
         <Route exact path="/kategori-ebook" component={kategoriebook} />

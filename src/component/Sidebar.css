@@ -1,4 +1,52 @@
-.profile-page {
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar img {
+  background-color: #fff;
+  border-radius: 200px;
+}
+
+.chart-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.dashboard-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.chat-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.apps-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.message-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.settings-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.addbook-page {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -36,7 +84,7 @@
   background-color: #293846;
 }
 
-.sidebar-list #active .sidebar-row {
+.sidebar-list #active {
   background-color: #293846;
 }
 

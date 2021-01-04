@@ -11,7 +11,7 @@ function Navbar() {
     Axios.get("http://localhost:3001/login").then((response) => {
       if (response.data.loggedIn === true) {
         setLoginStatus(`Welcome, ${response.data.user[0].username}`);
-        document.getElementById("NavLogin").href = "/comingsoon";
+        document.getElementById("NavLogin").href = "/dashboard";
       } else {
         setLoginStatus("Login");
       }

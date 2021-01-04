@@ -14,6 +14,16 @@ const Counter = () => {
     });
   }, []);
 
+  Axios.defaults.withCredentials = true;
+  useEffect(() => {
+    Axios.get("http://localhost:3001/login").then((response) => {
+      if (response.data.loggedIn === false) {
+        alert("You must logged in first");
+        window.history.back();
+      }
+    });
+  }, []);
+
   const selesaiPinjam = (id) => {
     Axios.post(`http://localhost:3001/selesaipinjam/${id}`).then((response) => {
       window.location.reload();

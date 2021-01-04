@@ -31,7 +31,7 @@ function KategoriBuku() {
         </div>
         <div className="kategori-buku-rightside">
           {kategoriList
-            .filter((val, key) => {
+            .filter((val) => {
               if (searchTerm === "") {
                 return val;
               } else if (

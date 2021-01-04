@@ -5,10 +5,11 @@ import MailIcon from "@material-ui/icons/Mail";
 import ChatIcon from "@material-ui/icons/Chat";
 import AppsIcon from "@material-ui/icons/Apps";
 import SettingsIcon from "@material-ui/icons/Settings";
+import StarIcon from "@material-ui/icons/Star";
 
 export const SidebarData = [
   {
-    title: "Home",
+    title: "Dashboard",
     icon: <HomeIcon />,
     link: "/dashboard",
   },
@@ -23,14 +24,19 @@ export const SidebarData = [
     link: "/chat",
   },
   {
+    title: "Tambah Buku",
+    icon: <StarIcon />,
+    link: "/addbook",
+  },
+  {
     title: "Message",
     icon: <MailIcon />,
-    link: "/mail",
+    link: "/message",
   },
   {
     title: "App",
     icon: <AppsIcon />,
-    link: "/app",
+    link: "/apps",
   },
   {
     title: "Setting",

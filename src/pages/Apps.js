@@ -1,9 +1,11 @@
 import React from "react";
+import Sidebar from "../component/Sidebar";
 
 function Apps() {
   return (
-    <div>
-      <h1>This is Apps</h1>
+    <div className="apps-page">
+      <Sidebar />
+      <h1>WIP</h1>
     </div>
   );
 }

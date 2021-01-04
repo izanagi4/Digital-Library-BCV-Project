@@ -1,13 +1,13 @@
 import React from "react";
 import Sidebar from "../component/Sidebar";
 
-function Chart() {
+function AddBook() {
   return (
-    <div className="chart-page">
+    <div className="addbook-page">
       <Sidebar />
       <h1>WIP</h1>
     </div>
   );
 }
 
-export default Chart;
+export default AddBook;

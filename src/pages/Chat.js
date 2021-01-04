@@ -1,9 +1,11 @@
 import React from "react";
+import Sidebar from "../component/Sidebar";
 
 function Chat() {
   return (
-    <div>
-      <h1>This is Chat</h1>
+    <div className="chat-page">
+      <Sidebar />
+      <h1>WIP</h1>
     </div>
   );
 }

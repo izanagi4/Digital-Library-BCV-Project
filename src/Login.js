@@ -34,7 +34,7 @@ function Login() {
         alert("Wrong username or password!");
         window.location.reload();
       } else {
-        alert("Welcome!");
+        alert(`Welcome ${loginStatus}`);
         window.location.href = "/";
       }
     });
