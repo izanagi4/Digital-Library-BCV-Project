@@ -9,9 +9,11 @@ function KategoriEbook() {
   const [ebookList, setEbookList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/kategoriebook").then((response) => {
-      setEbookList(response.data);
-    });
+    Axios.get("https://bcv-server-mysql.herokuapp.com/kategoriebook").then(
+      (response) => {
+        setEbookList(response.data);
+      }
+    );
   }, []);
 
   return (

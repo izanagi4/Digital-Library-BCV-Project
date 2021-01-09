@@ -9,14 +9,14 @@ const Counter = () => {
   const [bookList, setBookList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/21alasan").then((response) => {
+    Axios.get("https://bcv-server-mysql.herokuapp.com/21alasan").then((response) => {
       setBookList(response.data);
     });
   }, []);
 
   Axios.defaults.withCredentials = true;
   useEffect(() => {
-    Axios.get("http://localhost:3001/login").then((response) => {
+    Axios.get("https://bcv-server-mysql.herokuapp.com/login").then((response) => {
       if (response.data.loggedIn === false) {
         alert("You must logged in first");
         window.history.back();
@@ -25,13 +25,13 @@ const Counter = () => {
   }, []);
 
   const selesaiPinjam = (id) => {
-    Axios.post(`http://localhost:3001/selesaipinjam/${id}`).then((response) => {
+    Axios.post(`https://bcv-server-mysql.herokuapp.com/selesaipinjam/${id}`).then((response) => {
       window.location.reload();
     });
   };
 
   const pinjam = (id) => {
-    Axios.post(`http://localhost:3001/pinjam/${id}`).then((response) => {
+    Axios.post(`https://bcv-server-mysql.herokuapp.com/pinjam/${id}`).then((response) => {
       window.location.reload();
     });
   };

@@ -9,9 +9,11 @@ function KategoriBukuFavorit() {
   const [favoriteList, setFavoriteList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/kategoribukufav").then((response) => {
-      setFavoriteList(response.data);
-    });
+    Axios.get("https://bcv-server-mysql.herokuapp.com/kategoribukufav").then(
+      (response) => {
+        setFavoriteList(response.data);
+      }
+    );
   }, []);
   return (
     <div>
