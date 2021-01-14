@@ -9,14 +9,16 @@ function Sidebar() {
 
   Axios.defaults.withCredentials = true;
   useEffect(() => {
-    Axios.get("http://localhost:3001/login").then((response) => {
-      if (response.data.loggedIn === true) {
-        setLoginStatus(response.data.user[0].username);
-      } else {
-        alert("You're not logged in!");
-        window.history.href = "";
+    Axios.get("https://bcv-server-mysql.herokuapp.com/login").then(
+      (response) => {
+        if (response.data.loggedIn === true) {
+          setLoginStatus(response.data.user[0].username);
+        } else {
+          alert("You're not logged in!");
+          window.history.href = "";
+        }
       }
-    });
+    );
   }, []);
   return (
     <div className="sidebar">

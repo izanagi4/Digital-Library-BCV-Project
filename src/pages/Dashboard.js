@@ -9,25 +9,31 @@ function Dashboard() {
   const [role, setRole] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/rankingbuku").then((response) => {
-      setFavoriteList(response.data);
-    });
+    Axios.get("https://bcv-server-mysql.herokuapp.com/rankingbuku").then(
+      (response) => {
+        setFavoriteList(response.data);
+      }
+    );
   }, []);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/kategoribuku").then((response) => {
-      setKategoriList(response.data);
-    });
+    Axios.get("https://bcv-server-mysql.herokuapp.com/kategoribuku").then(
+      (response) => {
+        setKategoriList(response.data);
+      }
+    );
   }, []);
 
   Axios.defaults.withCredentials = true;
   useEffect(() => {
-    Axios.get("http://localhost:3001/login").then((response) => {
-      if (response.data.loggedIn === true) {
-        setRole(response.data.user[0].role);
-        console.log(response.data);
+    Axios.get("https://bcv-server-mysql.herokuapp.com/login").then(
+      (response) => {
+        if (response.data.loggedIn === true) {
+          setRole(response.data.user[0].role);
+          console.log(response.data);
+        }
       }
-    });
+    );
   }, []);
 
   useEffect(() => {

@@ -10,9 +10,11 @@ function KategoriBuku() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/kategoribuku").then((response) => {
-      setKategoriList(response.data);
-    });
+    Axios.get("https://bcv-server-mysql.herokuapp.com/kategoribuku").then(
+      (response) => {
+        setKategoriList(response.data);
+      }
+    );
   }, []);
 
   return (

@@ -11,7 +11,7 @@ function UploadRiset() {
   const [role, setRole] = useState("");
 
   const addRiset = () => {
-    Axios.post("http://localhost:3001/upload", {
+    Axios.post("https://bcv-server-mysql.herokuapp.com/upload", {
       namaLengkap: namaLengkap,
       univ: univ,
       namaPeneliti: namaPeneliti,
@@ -23,13 +23,22 @@ function UploadRiset() {
 
   Axios.defaults.withCredentials = true;
   useEffect(() => {
-    Axios.get("http://localhost:3001/login").then((response) => {
-      if (response.data.loggedIn === true) {
-        setRole(response.data.user[0].role);
-        console.log(response.data);
+    Axios.get("https://bcv-server-mysql.herokuapp.com/login").then(
+      (response) => {
+        if (response.data.loggedIn === true) {
+          setRole(response.data.user[0].role);
+          console.log(response.data);
+        }
       }
-    });
+    );
   }, []);
+
+  useEffect(() => {
+    if (role === "user") {
+      alert("You don't have the privilege to access this page");
+      window.location.href = "/";
+    }
+  });
 
   return (
     <div className="uploadriset-page">

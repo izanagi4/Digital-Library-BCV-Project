@@ -8,14 +8,16 @@ function Navbar() {
 
   Axios.defaults.withCredentials = true;
   useEffect(() => {
-    Axios.get("http://localhost:3001/login").then((response) => {
-      if (response.data.loggedIn === true) {
-        setLoginStatus(`Welcome, ${response.data.user[0].username}`);
-        document.getElementById("NavLogin").href = "/dashboard";
-      } else {
-        setLoginStatus("Login");
+    Axios.get("https://bcv-server-mysql.herokuapp.com/login").then(
+      (response) => {
+        if (response.data.loggedIn === true) {
+          setLoginStatus(`Welcome, ${response.data.user[0].username}`);
+          document.getElementById("NavLogin").href = "/dashboard";
+        } else {
+          setLoginStatus("Login");
+        }
       }
-    });
+    );
   }, []);
 
   return (

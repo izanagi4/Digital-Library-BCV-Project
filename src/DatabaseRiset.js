@@ -11,19 +11,23 @@ function DatabaseRiset() {
   const [role, setRole] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/uploadriset").then((response) => {
-      setRisetList(response.data);
-    });
+    Axios.get("https://bcv-server-mysql.herokuapp.com/uploadriset").then(
+      (response) => {
+        setRisetList(response.data);
+      }
+    );
   }, []);
 
   Axios.defaults.withCredentials = true;
   useEffect(() => {
-    Axios.get("http://localhost:3001/login").then((response) => {
-      if (response.data.loggedIn === true) {
-        setRole(response.data.user[0].role);
-        console.log(response.data);
+    Axios.get("https://bcv-server-mysql.herokuapp.com/login").then(
+      (response) => {
+        if (response.data.loggedIn === true) {
+          setRole(response.data.user[0].role);
+          console.log(response.data);
+        }
       }
-    });
+    );
   }, []);
 
   return (

@@ -12,7 +12,7 @@ function Login() {
   const [loginStatus, setLoginStatus] = useState("");
   Axios.defaults.withCredentials = true;
   const register = () => {
-    Axios.post("http://localhost:3001/register", {
+    Axios.post("https://bcv-server-mysql.herokuapp.com/register", {
       username: username,
       password: password,
     }).then((response) => {
@@ -26,7 +26,7 @@ function Login() {
   };
 
   const login = () => {
-    Axios.post("http://localhost:3001/login", {
+    Axios.post("https://bcv-server-mysql.herokuapp.com/login", {
       username: usernameLogin,
       password: passwordLogin,
     }).then((response) => {
@@ -41,11 +41,13 @@ function Login() {
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/login").then((response) => {
-      if (response.data.loggedIn === true) {
-        setLoginStatus(response.data.user[0].username);
+    Axios.get("https://bcv-server-mysql.herokuapp.com/login").then(
+      (response) => {
+        if (response.data.loggedIn === true) {
+          setLoginStatus(response.data.user[0].username);
+        }
       }
-    });
+    );
   }, []);
 
   const ChangetoRegist = () => {
