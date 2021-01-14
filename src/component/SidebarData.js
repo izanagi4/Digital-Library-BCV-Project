@@ -23,11 +23,7 @@ export const SidebarData = [
     icon: <ChatIcon />,
     link: "/chat",
   },
-  {
-    title: "Tambah Buku",
-    icon: <StarIcon />,
-    link: "/addbook",
-  },
+
   {
     title: "Message",
     icon: <MailIcon />,
