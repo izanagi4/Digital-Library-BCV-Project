@@ -4,7 +4,9 @@ import { NavLink } from "react-router-dom";
 import banner from "./images/e-library banner 2.png";
 import riset from "./images/carousel-1.jpg";
 import catalogue from "./images/carousel-2.jpg";
-import card from "./images/card-img-1.jpg";
+import hotbooks from "./images/hot-books.svg";
+import ebooks from "./images/e-books.svg";
+import news from "./images/news.png";
 import Navbar from "./component/Navbar";
 import Footer from "./Footer";
 
@@ -27,20 +29,20 @@ function Home() {
             to="/kategori-buku-favorit"
             style={{ textDecoration: "none" }}
           >
-            <img src={card} alt="" />
+            <img src={hotbooks} alt="" />
             <h4>Hot Books!</h4>
           </NavLink>
         </div>
 
         <div className="card green">
           <NavLink to="/kategori-ebook" style={{ textDecoration: "none" }}>
-            <img src={card} alt="" />
+            <img src={ebooks} alt="" />
             <h4>E-Books!</h4>
           </NavLink>
         </div>
         <div className="card red">
           <NavLink to="/comingsoon" style={{ textDecoration: "none" }}>
-            <img src={card} alt="" />
+            <img src={news} alt="" />
             <h4>Our News!</h4>
           </NavLink>
         </div>
