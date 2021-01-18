@@ -36,6 +36,7 @@ function Login() {
         window.location.reload();
       } else {
         alert(`Welcome ${loginStatus}`);
+        window.location.reload();
         console.log(response);
       }
     });
@@ -115,7 +116,6 @@ function Login() {
           }}
         />
         <button onClick={login}>Login!</button>
-        <h1>{loginStatus} is logged in</h1>
         <h6 onClick={ChangetoRegist}>Haven't registered yet? Create one!</h6>
         <ul className="social-media">
           <li>

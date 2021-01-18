@@ -96,6 +96,10 @@ body {
 }
 
 .footer .card {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
   border: 5px solid white;
   border-radius: 10px;
   margin: 20px;
@@ -107,13 +111,22 @@ body {
   display: block;
   text-align: center;
   text-decoration: none;
-  color: black;
+  background-color: #00a0ff;
+  border-radius: 15px;
+  color: white;
+  padding: 5px;
   margin: 5px;
 }
 
 .card img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
   border-radius: 10px 10px 0px 0px;
   max-width: 100%;
+  width: 350px;
+  height: 250px;
 }
 
 .card a img:hover {
