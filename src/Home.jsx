@@ -2,8 +2,6 @@ import React from "react";
 import "./styles/Home.css";
 import { NavLink } from "react-router-dom";
 import banner from "./images/e-library banner 2.png";
-import riset from "./images/carousel-1.jpg";
-import catalogue from "./images/carousel-2.jpg";
 import hotbooks from "./images/hot-books.svg";
 import ebooks from "./images/e-books.svg";
 import news from "./images/news.png";
@@ -17,9 +15,25 @@ function Home() {
       <div className="flexbox-upper-side">
         <div className="upper-side">
           <img src={banner} alt="e-library-banner" />
-          <div className="small-img">
-            <img src={riset} alt="riset" />
-            <img src={catalogue} alt="catalogue" />
+          <div className="small-img option">
+            <div className="riset-option">
+              <h4>
+                Klik <b>Riset</b> Buat kamu yang mau Riset di BNI. Detailnya ada
+                di FAQ yaa...
+              </h4>
+              <a href="/riset">
+                <button>View Riset</button>
+              </a>
+            </div>
+            <div className="catalogue-option">
+              <h4>
+                Ada beberapa pilihan buku yang bisa kamu pinjam dan diantar
+                gratis!
+              </h4>
+              <a href="/catalogue">
+                <button>View Catalogue</button>
+              </a>
+            </div>
           </div>
         </div>
       </div>

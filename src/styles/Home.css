@@ -138,3 +138,83 @@ body {
   position: relative;
   top: -1em;
 }
+
+.option {
+  display: flex;
+  width: 100%;
+  flex: 1;
+}
+.option button {
+  outline: none;
+}
+
+.riset-option {
+  margin: 35px;
+  padding: 150px;
+  background-color: gray;
+  border-radius: 15px;
+  border: 5px solid white;
+  background-image: url("../images/riset-img.svg");
+  background-size: 30rem;
+  background-position: 8rem 4rem;
+  background-repeat: no-repeat;
+}
+
+.riset-option h4 {
+  position: relative;
+  bottom: 8rem;
+  right: 8rem;
+  display: inline-block;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.riset-option button {
+  position: relative;
+  bottom: 8rem;
+  right: 8rem;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 15px;
+  background-color: orange;
+  transition: all 300ms ease-in-out;
+}
+.riset-option button:hover {
+  color: white;
+}
+
+.catalogue-option {
+  margin: 35px;
+  padding: 150px;
+  border-radius: 15px;
+  border: 5px solid white;
+  background-image: url("../images/catalogue-img.png");
+  background-size: 25rem;
+  background-position: 8rem 4rem;
+  background-repeat: no-repeat;
+  background-color: black;
+  color: white;
+}
+
+.catalogue-option h4 {
+  position: relative;
+  bottom: 8rem;
+  right: 8rem;
+  display: inline-block;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.catalogue-option button {
+  position: relative;
+  bottom: 8rem;
+  right: 8rem;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 15px;
+  background-color: orange;
+  transition: all 300ms ease-in-out;
+}
+.catalogue-option button:hover {
+  color: white;
+}
