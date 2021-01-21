@@ -2,6 +2,11 @@ import React from "react";
 import "./styles/Home.css";
 import { NavLink } from "react-router-dom";
 import banner from "./images/e-library banner 2.png";
+<<<<<<< HEAD
+=======
+import riset from "./images/carousel-1.jpg";
+import catalogue from "./images/carousel-2.jpg";
+>>>>>>> 556caa73d677a086ccbc6fea48b73abb11ccb4c9
 import hotbooks from "./images/hot-books.svg";
 import ebooks from "./images/e-books.svg";
 import news from "./images/news.png";
@@ -15,6 +20,7 @@ function Home() {
       <div className="flexbox-upper-side">
         <div className="upper-side">
           <img src={banner} alt="e-library-banner" />
+<<<<<<< HEAD
           <div className="small-img option">
             <div className="riset-option">
               <h4>
@@ -34,6 +40,11 @@ function Home() {
                 <button>View Catalogue</button>
               </a>
             </div>
+=======
+          <div className="small-img">
+            <img src={riset} alt="riset" />
+            <img src={catalogue} alt="catalogue" />
+>>>>>>> 556caa73d677a086ccbc6fea48b73abb11ccb4c9
           </div>
         </div>
       </div>
@@ -43,14 +54,22 @@ function Home() {
             to="/kategori-buku-favorit"
             style={{ textDecoration: "none" }}
           >
+<<<<<<< HEAD
             <img src={ebooks} alt="" />
+=======
+            <img src={hotbooks} alt="" />
+>>>>>>> 556caa73d677a086ccbc6fea48b73abb11ccb4c9
             <h4>Hot Books!</h4>
           </NavLink>
         </div>
 
         <div className="card green">
           <NavLink to="/kategori-ebook" style={{ textDecoration: "none" }}>
+<<<<<<< HEAD
             <img src={hotbooks} alt="" />
+=======
+            <img src={ebooks} alt="" />
+>>>>>>> 556caa73d677a086ccbc6fea48b73abb11ccb4c9
             <h4>E-Books!</h4>
           </NavLink>
         </div>
